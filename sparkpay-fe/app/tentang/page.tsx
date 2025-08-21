@@ -1,5 +1,3 @@
-// C:\sparkpay-payment\sparkpay-fe\app\tentang\page.tsx
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Target, Goal, Lightbulb, ShieldCheck, Users, MapPin, Mail, Phone } from "lucide-react";
