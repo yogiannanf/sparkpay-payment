@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-// Pastikan path import ini sesuai dengan struktur proyek Anda
 import { Button } from "@/components/ui/button"; 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -125,7 +124,7 @@ const SolusiPage: React.FC = () => {
   return (
     <div className="bg-white font-sans">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-green-50 to-blue-50">
+      <section style={{ backgroundColor: '#F5FBF5' }}>
         <div className="max-w-7xl mx-auto px-6 py-20 lg:py-32">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
