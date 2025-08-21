@@ -1,1 +1,0 @@
-# sprakpay-payment
