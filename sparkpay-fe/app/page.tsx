@@ -388,9 +388,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           {/* Main Header (tetap di luar kotak) */}
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-slate-800">
-              Ribuan Merchant Percaya SparkPay
-            </h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-800">Ribuan Merchant Percaya SparkPay</h2>
             <p className="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">
               Bergabunglah bersama brand dan bisnis yang sudah merasakan kemudahan menerima pembayaran.
             </p>
@@ -404,14 +402,14 @@ export default function Home() {
             
             {/* Teks di dalam Kotak */}
             <div className="text-center mb-12">
-              <h3 className="text-3xl font-bold text-slate-800">
+              <h3 className="text-2xl font-bold text-slate-800">
                 Miliaran Rupiah transaksi setiap bulan
               </h3>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto mb-16 text-center md:text-left">
               <div>
-                <h4 className="text-xl font-bold text-slate-800 mb-3">
+                <h4 className="text-xl font-bold text-slate-800 mb-2">
                   Dipercaya Bisnis di Seluruh Indonesia
                 </h4>
                 <p className="text-slate-600 leading-relaxed">
@@ -419,7 +417,7 @@ export default function Home() {
                 </p>
               </div>
               <div>
-                <h4 className="text-xl font-bold text-slate-800 mb-3">
+                <h4 className="text-xl font-bold text-slate-800 mb-2">
                   Transaksi Lancar Setiap Detik
                 </h4>
                 <p className="text-slate-600 leading-relaxed">
