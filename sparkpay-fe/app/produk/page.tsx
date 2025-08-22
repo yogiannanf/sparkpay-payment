@@ -156,37 +156,49 @@ const dashboardFeatures: DashboardFeature[] = [
   }
 ];
 
-// --- Komponen Kartu Produk ---
-const ProductCard: React.FC<ProductFeature> = ({ title, description, details, id, icon, illustration }) => (
-  <div id={id} className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
-    <div className="order-2 lg:order-1">
-      <div className="flex items-center mb-6">
-        <div className="bg-green-100 p-3 rounded-full mr-4">
-          {icon}
+// --- Komponen Kartu Produk (MODIFIKASI) ---
+const ProductCard: React.FC<ProductFeature & { index: number }> = ({ 
+  title, 
+  description, 
+  details, 
+  id, 
+  icon, 
+  illustration, 
+  index 
+}) => {
+  const isReversed = index % 2 !== 0;
+
+  return (
+    <div id={id} className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className={isReversed ? 'lg:order-2' : 'lg:order-1'}>
+        <div className="flex items-center mb-6">
+          <div className="bg-green-100 p-3 rounded-full mr-4">
+            {icon}
+          </div>
+          <h3 className="text-2xl font-bold text-gray-900">{title}</h3>
         </div>
-        <h3 className="text-2xl font-bold text-gray-900">{title}</h3>
+        <p className="text-gray-600 mb-6 leading-relaxed">{description}</p>
+        <ul className="space-y-3">
+          {details.map((detail, detailIndex) => (
+            <li key={detailIndex} className="flex items-start">
+              <CheckIcon />
+              <span className="text-gray-700 leading-relaxed">{detail}</span>
+            </li>
+          ))}
+        </ul>
       </div>
-      <p className="text-gray-600 mb-6 leading-relaxed">{description}</p>
-      <ul className="space-y-3">
-        {details.map((detail, index) => (
-          <li key={index} className="flex items-start">
-            <CheckIcon />
-            <span className="text-gray-700 leading-relaxed">{detail}</span>
-          </li>
-        ))}
-      </ul>
+      <div className={isReversed ? 'lg:order-1' : 'lg:order-2'}>
+        <Image 
+          src={illustration} 
+          alt={`${title} Illustration`} 
+          width={500}
+          height={300}
+          className="rounded-xl shadow-lg w-full h-auto object-cover"
+        />
+      </div>
     </div>
-    <div className="order-1 lg:order-2">
-      <Image 
-        src={illustration} 
-        alt={`${title} Illustration`} 
-        width={500}
-        height={300}
-        className="rounded-xl shadow-lg w-full h-auto object-cover"
-      />
-    </div>
-  </div>
-);
+  );
+};
 
 // --- Komponen Fitur Dashboard ---
 const DashboardFeatureCard: React.FC<DashboardFeature> = ({ title, description, icon }) => (
@@ -223,9 +235,9 @@ const ProdukPage: React.FC = () => {
               <Button
                 size="lg"
                   className="bg-[#3C8346] text-white text-lg font-bold rounded-lg px-8 py-4 shadow-[0_8px_20px_rgba(60,131,70,0.5)] hover:bg-green-700 transform transition-transform duration-300 hover:scale-105"
-                    >
-                 Jelajahi Produk Kami
-               </Button>
+                  >
+                Jelajahi Produk Kami
+              </Button>
             </div>
             <div className="flex justify-center lg:justify-end">
               <Image 
@@ -252,8 +264,8 @@ const ProdukPage: React.FC = () => {
             </p>
           </div>
           <div className="space-y-20">
-            {productsData.map((product) => (
-              <ProductCard key={product.id} {...product} />
+            {productsData.map((product, index) => (
+              <ProductCard key={product.id} {...product} index={index} />
             ))}
           </div>
         </div>
