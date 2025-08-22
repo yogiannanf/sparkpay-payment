@@ -478,87 +478,100 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Social Proof / Testimonials */}
-      <section className="relative w-full py-24 overflow-hidden bg-slate-50">
-        {/* Bintang Dekoratif */}
-        <div className="absolute hidden text-5xl text-yellow-400 transform -translate-y-1/2 md:block top-1/4 left-10 opacity-80 rotate-12">★</div>
-        <div className="absolute hidden text-2xl text-yellow-400 transform -translate-x-1/2 md:block top-1/2 left-1/4 opacity-70">★</div>
-        <div className="absolute hidden text-xl text-yellow-400 transform translate-y-1/2 md:block top-1/3 right-1/4 opacity-60 -rotate-12">★</div>
-        <div className="absolute hidden text-5xl text-yellow-400 transform rotate-45 translate-y-full md:block top-1/2 right-10 opacity-80">★</div>
-        <div className="absolute hidden text-3xl text-yellow-400 md:block bottom-10 left-1/3 opacity-70">★</div>
+    {/* Social Proof / Testimonials */}
+    <section className="relative w-full py-24 overflow-hidden bg-slate-50">
+      {/* Bintang Dekoratif */}
+      <div className="absolute hidden text-5xl text-yellow-400 transform -translate-y-1/2 md:block top-1/4 left-10 opacity-80 rotate-12">★</div>
+      <div className="absolute hidden text-2xl text-yellow-400 transform -translate-x-1/2 md:block top-1/2 left-1/4 opacity-70">★</div>
+      <div className="absolute hidden text-xl text-yellow-400 transform translate-y-1/2 md:block top-1/3 right-1/4 opacity-60 -rotate-12">★</div>
+      <div className="absolute hidden text-5xl text-yellow-400 transform rotate-45 translate-y-full md:block top-1/2 right-10 opacity-80">★</div>
+      <div className="absolute hidden text-3xl text-yellow-400 md:block bottom-10 left-1/3 opacity-70">★</div>
 
-        <div className="relative z-10 px-6 mx-auto max-w-7xl">
-          {/* Main Header (tetap di luar kotak) */}
+      <div className="relative z-10 px-6 mx-auto max-w-7xl">
+        {/* Main Header (tetap di luar kotak) */}
+        <div className="mb-12 text-center">
+          <h2 className="text-3xl font-bold md:text-4xl text-slate-800">Ribuan Merchant Percaya SparkPay</h2>
+          <p className="max-w-3xl mx-auto mt-4 text-lg text-slate-600">
+            Bergabunglah bersama brand dan bisnis yang sudah merasakan kemudahan menerima pembayaran.
+          </p>
+        </div>
+
+        {/* Kontainer "Kotak" Putih dengan Shadow Hijau */}
+        <div
+          className="p-6 sm:p-8 bg-white rounded-2xl md:p-12"
+          style={{ boxShadow: '0 10px 25px -5px rgba(60, 131, 70, 0.2), 0 8px 10px -6px rgba(60, 131, 70, 0.2)' }}
+        >
+          {/* Teks di dalam Kotak */}
           <div className="mb-12 text-center">
-            <h2 className="text-3xl font-bold md:text-4xl text-slate-800">Ribuan Merchant Percaya SparkPay</h2>
-            <p className="max-w-3xl mx-auto mt-4 text-lg text-slate-600">
-              Bergabunglah bersama brand dan bisnis yang sudah merasakan kemudahan menerima pembayaran.
-            </p>
+            <h3 className="text-2xl font-bold text-slate-800">
+              Miliaran Rupiah transaksi setiap bulan
+            </h3>
           </div>
 
-          {/* Kontainer "Kotak" Putih dengan Shadow Hijau */}
-          <div
-            className="p-8 bg-white rounded-2xl md:p-12"
-            style={{ boxShadow: '0 10px 25px -5px rgba(60, 131, 70, 0.2), 0 8px 10px -6px rgba(60, 131, 70, 0.2)' }}
+          <div className="grid max-w-4xl grid-cols-1 gap-12 mx-auto mb-16 text-center md:grid-cols-2 md:text-left">
+            <div>
+              <h4 className="mb-2 text-xl font-bold text-slate-800">
+                Dipercaya Bisnis di Seluruh Indonesia
+              </h4>
+              <p className="leading-relaxed text-slate-600">
+                Untuk menerima pembayaran lebih mudah
+              </p>
+            </div>
+            <div>
+              <h4 className="mb-2 text-xl font-bold text-slate-800">
+                Transaksi Lancar Setiap Detik
+              </h4>
+              <p className="leading-relaxed text-slate-600">
+                Nilai miliaran rupiah mengalir lewat SparkPay setiap bulan
+              </p>
+            </div>
+          </div>
+
+          {/* Testimonial Carousel */}
+          <Carousel 
+            opts={{ align: "start", loop: true, dragFree: true }} 
+            setApi={setApi}   // 👈 tambahkan ini
+            className="w-full"
           >
-
-            {/* Teks di dalam Kotak */}
-            <div className="mb-12 text-center">
-              <h3 className="text-2xl font-bold text-slate-800">
-                Miliaran Rupiah transaksi setiap bulan
-              </h3>
-            </div>
-
-            <div className="grid max-w-4xl grid-cols-1 gap-12 mx-auto mb-16 text-center md:grid-cols-2 md:text-left">
-              <div>
-                <h4 className="mb-2 text-xl font-bold text-slate-800">
-                  Dipercaya Bisnis di Seluruh Indonesia
-                </h4>
-                <p className="leading-relaxed text-slate-600">
-                  Untuk menerima pembayaran lebih mudah
-                </p>
-              </div>
-              <div>
-                <h4 className="mb-2 text-xl font-bold text-slate-800">
-                  Transaksi Lancar Setiap Detik
-                </h4>
-                <p className="leading-relaxed text-slate-600">
-                  Nilai miliaran rupiah mengalir lewat SparkPay setiap bulan
-                </p>
-              </div>
-            </div>
-
-            {/* Testimonial Carousel */}
-            <Carousel opts={{ align: "start", loop: true }} className="w-full">
-              <CarouselContent className="-ml-6">
-                {testimonialsData.map((testimonial, index) => (
-                  <CarouselItem key={index} className="pl-6 md:basis-1/2 lg:basis-1/3">
-                    <div className="h-full p-1">
-                      <div className="flex flex-col h-full p-6 border border-yellow-300 rounded-xl">
-                        <div className="relative flex-grow">
-                          <div className="absolute font-serif text-orange-300 -top-4 -left-2 text-7xl opacity-80">&ldquo;</div>
-                          <p className="relative z-10 pt-8 leading-relaxed text-slate-700">
-                            {testimonial.quote}
-                          </p>
-                        </div>
-                        <div className="flex items-center mt-6">
-                          <Image className="object-cover w-12 h-12 mr-4 rounded-full" src={testimonial.avatar} alt={testimonial.name} width={48} height={48} />
-                          <div>
-                            <h5 className="font-semibold text-slate-800">{testimonial.name}</h5>
-                            <p className="text-sm text-slate-500">{testimonial.title}</p>
-                          </div>
+            <CarouselContent className="-ml-6 flex">
+              {testimonialsData.map((testimonial, index) => (
+                <CarouselItem
+                  key={index}
+                  className="pl-6 basis-full sm:basis-1/2 lg:basis-1/3"
+                >
+                  <div className="h-full p-1">
+                    <div className="flex flex-col h-full p-4 sm:p-6 border border-yellow-300 rounded-xl">
+                      <div className="relative flex-grow">
+                        <div className="absolute font-serif text-orange-300 -top-4 -left-2 text-7xl opacity-80">&ldquo;</div>
+                        <p className="relative z-10 pt-8 leading-relaxed text-slate-700 min-h-[120px]">
+                          {testimonial.quote}
+                        </p>
+                      </div>
+                      <div className="flex items-center mt-6">
+                        <Image
+                          className="object-cover w-12 h-12 mr-4 rounded-full"
+                          src={testimonial.avatar}
+                          alt={testimonial.name}
+                          width={48}
+                          height={48}
+                        />
+                        <div>
+                          <h5 className="font-semibold text-slate-800">{testimonial.name}</h5>
+                          <p className="text-sm text-slate-500">{testimonial.title}</p>
                         </div>
                       </div>
                     </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious className="hidden xl:flex" />
-              <CarouselNext className="hidden xl:flex" />
-            </Carousel>
-          </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden xl:flex" />
+            <CarouselNext className="hidden xl:flex" />
+          </Carousel>
         </div>
-      </section>
+      </div>
+    </section>
+
 
       {/* FAQ & CTA Section */}
       <section className="w-full py-24 bg-white">
