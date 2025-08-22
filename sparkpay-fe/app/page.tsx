@@ -1,5 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { type CarouselApi } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -109,6 +113,33 @@ const faqData = [
 
 
 export default function Home() {
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap());
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap());
+    });
+  }, [api]);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      if (api) {
+        api.scrollNext();
+      }
+    }, 3000); // Change slide every 3 seconds
+
+    return () => clearInterval(timer);
+  }, [api]);
+
   return (
     <div className="flex flex-col items-center">
       {/* Hero Section */}
@@ -202,7 +233,14 @@ export default function Home() {
             <p className="max-w-3xl mx-auto mt-4 text-lg text-slate-600">Solusi pembayaran lengkap yang dirancang untuk memenuhi kebutuhan bisnis modern.</p>
           </div>
 
-          <Carousel opts={{ align: "start", loop: true }} className="w-full">
+          <Carousel 
+            opts={{ 
+              align: "start", 
+              loop: true
+            }}
+            setApi={setApi}
+            className="w-full"
+          >
             <CarouselContent className="-ml-4">
               <CarouselItem className="pl-4 md:basis-1/2 lg:basis-1/3">
                 <div className="h-full p-1">
