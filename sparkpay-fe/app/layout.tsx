@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation"; // <-- Import usePathname
 import "./globals.css";
 import { FaFacebookF, FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa";
 import { Button } from "@/components/ui/button"; // Asumsi Anda punya komponen ini
+import { FaEnvelope } from "react-icons/fa";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -133,18 +134,26 @@ export default function RootLayout({
                 Solusi pembayaran terintegrasi untuk bisnis Indonesia. Aman, cepat, dan mudah digunakan.
               </p>
               <div className="flex space-x-4">
-                <a href="https://www.facebook.com/NarayaTelematika" target="_blank" rel="noopener noreferrer" className="bg-white p-2 rounded-full text-[#0D1B2A] hover:bg-green-500 hover:text-white transition-colors">
+                {/* <a href="https://www.facebook.com/NarayaTelematika" target="_blank" rel="noopener noreferrer" className="bg-white p-2 rounded-full text-[#0D1B2A] hover:bg-green-500 hover:text-white transition-colors">
                   <FaFacebookF size={18} />
-                </a>
+                </a> */}
                 <a href="https://www.instagram.com/narayatelematika/" target="_blank" rel="noopener noreferrer" className="bg-white p-2 rounded-full text-[#0D1B2A] hover:bg-green-500 hover:text-white transition-colors">
                   <FaInstagram size={18} />
                 </a>
-                <a href="https://www.tiktok.com/@kaptennaratel" target="_blank" rel="noopener noreferrer" className="bg-white p-2 rounded-full text-[#0D1B2A] hover:bg-green-500 hover:text-white transition-colors">
+                <a
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=support@sparkpay.id&su=Permintaan%20Informasi%20Sparkpay&body=Halo%20Tim%20Sparkpay,%0A%0ASaya%20ingin%20bertanya%20tentang%20layanan%20Sparkpay.%0A%0ATerima%20kasih."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white p-2 rounded-full text-[#0D1B2A] hover:bg-green-500 hover:text-white transition-colors"
+                >
+                  <FaEnvelope size={18} />
+                </a>
+                {/* <a href="https://www.tiktok.com/@kaptennaratel" target="_blank" rel="noopener noreferrer" className="bg-white p-2 rounded-full text-[#0D1B2A] hover:bg-green-500 hover:text-white transition-colors">
                   <FaTiktok size={18} />
                 </a>
                 <a href="https://wa.me/6288212022222" target="_blank" rel="noopener noreferrer" className="bg-white p-2 rounded-full text-[#0D1B2A] hover:bg-green-500 hover:text-white transition-colors">
                   <FaWhatsapp size={18} />
-                </a>
+                </a> */}
               </div>
             </div>
             {/* Produk */}
@@ -176,27 +185,59 @@ export default function RootLayout({
               <h3 className="font-semibold mb-5 text-white text-lg">Kontak Resmi</h3>
               <div className="flex items-start mb-4">
                 <span className="mr-2 mt-1">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-green-500" viewBox="0 0 20 20" fill="currentColor"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" /><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" /></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-green-500" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                  </svg>
                 </span>
-                <p className="text-sm">support@sparkpay.id</p>
+                <a
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=support@sparkpay.id&su=Permintaan%20Informasi%20Sparkpay&body=Halo%20Tim%20Sparkpay,%0A%0ASaya%20ingin%20bertanya%20tentang%20layanan%20Sparkpay.%0A%0ATerima%20kasih."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-white"
+                >
+                  support@sparkpay.id
+                </a>
               </div>
-              <div className="flex items-start mb-4">
+              {/* <div className="flex items-start mb-4">
                 <span className="mr-2 mt-1">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-green-500" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" /></svg>
                 </span>
                 <p className="text-sm">0882-1202-2222</p>
-              </div>
+              </div> */}
               <div className="flex items-start mb-6">
                 <span className="mr-2 mt-1">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-green-500" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" /></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-green-500" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                  </svg>
                 </span>
-                <p className="text-sm">Jalan Veteran Nomor 12, Pekuncen, Panggungrejo, Kota Pasuruan, Jawa Timur</p>
+                <a
+                  href="https://maps.app.goo.gl/4HvjGHvbWxTiyrqk6"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-white"
+                >
+                  Jalan Veteran Nomor 12, Pekuncen, Panggungrejo, Kota Pasuruan, Jawa Timur
+                </a>
               </div>
               <h3 className="font-semibold mb-3 text-white text-lg">Informasi Perusahaan</h3>
-              <p className="text-sm font-semibold">PT. Sarana Performa Sejahtera</p>
-              <p className="text-sm mb-3">Operasional & Teknologi</p>
-              <p className="text-sm font-semibold">PT. Naraya Telematika</p>
-              <p className="text-sm">Lisensi & Compliance</p>
+              <a
+                href="https://companieshouse.id/sarana-performa-sejahtera"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-semibold text-white block"
+                >
+                  PT. Sarana Performa Sejahtera
+                </a>
+                <a
+                  href="https://companieshouse.id/sarana-performa-sejahtera"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-white mb-3 block"
+                >
+                  Operasional & Teknologi
+              </a>
+
             </div>
           </div>
           {/* Copyright */}

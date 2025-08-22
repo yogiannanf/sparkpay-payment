@@ -28,6 +28,16 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 
+  useEffect(() => {
+    if (!api) return;
+
+    const interval = setInterval(() => {
+      api.slideNext(); // maju satu item
+    }, 3000); // 3000ms = 3 detik
+
+    return () => clearInterval(interval);
+  }, [api]);
+
 // Data untuk section "How It Works"
 const howItWorksData = [
   {
@@ -428,14 +438,7 @@ export default function Home() {
                           strokeLinecap="round"
                           strokeLinejoin="round"
                         >
-                          <rect
-                            x="2"
-                            y="7"
-                            width="20"
-                            height="14"
-                            rx="2"
-                            ry="2"
-                          ></rect>
+                          <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
                           <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
                         </svg>
                       </div>
@@ -449,16 +452,13 @@ export default function Home() {
                       </p>
                       <ul className="mt-auto space-y-2 text-sm">
                         <li className="flex items-center text-slate-700">
-                          <span className="mr-2 text-green-500">✓</span> 20+
-                          metode pembayaran
+                          <span className="mr-2 text-green-500">✓</span> 20+ metode pembayaran
                         </li>
                         <li className="flex items-center text-slate-700">
-                          <span className="mr-2 text-green-500">✓</span> Satu
-                          API untuk semua
+                          <span className="mr-2 text-green-500">✓</span> Satu API untuk semua
                         </li>
                         <li className="flex items-center text-slate-700">
-                          <span className="mr-2 text-green-500">✓</span>{" "}
-                          Laporan otomatis
+                          <span className="mr-2 text-green-500">✓</span> Laporan otomatis
                         </li>
                       </ul>
                     </CardContent>
@@ -497,16 +497,13 @@ export default function Home() {
                       </p>
                       <ul className="mt-auto space-y-2 text-sm">
                         <li className="flex items-center text-slate-700">
-                          <span className="mr-2 text-green-500">✓</span>{" "}
-                          Analisis real-time
+                          <span className="mr-2 text-green-500">✓</span> Analisis real-time
                         </li>
                         <li className="flex items-center text-slate-700">
-                          <span className="mr-2 text-green-500">✓</span> Export
-                          laporan
+                          <span className="mr-2 text-green-500">✓</span> Export laporan
                         </li>
                         <li className="flex items-center text-slate-700">
-                          <span className="mr-2 text-green-500">✓</span>{" "}
-                          Multi-user access
+                          <span className="mr-2 text-green-500">✓</span> Multi-user access
                         </li>
                       </ul>
                     </CardContent>
@@ -544,16 +541,13 @@ export default function Home() {
                       </p>
                       <ul className="mt-auto space-y-2 text-sm">
                         <li className="flex items-center text-slate-700">
-                          <span className="mr-2 text-green-500">✓</span> REST
-                          API
+                          <span className="mr-2 text-green-500">✓</span> REST API
                         </li>
                         <li className="flex items-center text-slate-700">
-                          <span className="mr-2 text-green-500">✓</span> SDK
-                          lengkap
+                          <span className="mr-2 text-green-500">✓</span> SDK lengkap
                         </li>
                         <li className="flex items-center text-slate-700">
-                          <span className="mr-2 text-green-500">✓</span> Plugin
-                          ready
+                          <span className="mr-2 text-green-500">✓</span> Plugin ready
                         </li>
                       </ul>
                     </CardContent>
@@ -586,21 +580,17 @@ export default function Home() {
                       </h3>
                       <p className="text-sm text-slate-600">
                         Terima notifikasi instan via webhook, email, dan SMS
-                        untuk setiap perubahan status transaksi secara
-                        real-time.
+                        untuk setiap perubahan status transaksi secara real-time.
                       </p>
                       <ul className="mt-auto space-y-2 text-sm">
                         <li className="flex items-center text-slate-700">
-                          <span className="mr-2 text-green-500">✓</span>{" "}
-                          Webhook real-time
+                          <span className="mr-2 text-green-500">✓</span> Webhook real-time
                         </li>
                         <li className="flex items-center text-slate-700">
-                          <span className="mr-2 text-green-500">✓</span> Email
-                          alerts
+                          <span className="mr-2 text-green-500">✓</span> Email alerts
                         </li>
                         <li className="flex items-center text-slate-700">
-                          <span className="mr-2 text-green-500">✓</span> SMS
-                          notification
+                          <span className="mr-2 text-green-500">✓</span> SMS notification
                         </li>
                       </ul>
                     </CardContent>
@@ -637,16 +627,13 @@ export default function Home() {
                       </p>
                       <ul className="mt-auto space-y-2 text-sm">
                         <li className="flex items-center text-slate-700">
-                          <span className="mr-2 text-green-500">✓</span> PCI
-                          DSS certified
+                          <span className="mr-2 text-green-500">✓</span> PCI DSS certified
                         </li>
                         <li className="flex items-center text-slate-700">
-                          <span className="mr-2 text-green-500">✓</span> SSL
-                          encryption
+                          <span className="mr-2 text-green-500">✓</span> SSL encryption
                         </li>
                         <li className="flex items-center text-slate-700">
-                          <span className="mr-2 text-green-500">✓</span>{" "}
-                          Anti-fraud system
+                          <span className="mr-2 text-green-500">✓</span> Anti-fraud system
                         </li>
                       </ul>
                     </CardContent>
@@ -659,6 +646,7 @@ export default function Home() {
           </Carousel>
         </div>
       </section>
+
 
       {/* How It Works */}
       <section className="w-full py-24 bg-[#F5FBF5]">
@@ -1033,23 +1021,27 @@ export default function Home() {
                   Bicaralah dengan anggota tim kami yang siap membantu untuk
                   mendapatkan semua jawaban yang Anda butuhkan.
                 </p>
-                <a href="mailto:support@sparkpay.id">
-                  <Button className="bg-[#3C8346] text-white hover:bg-green-700 font-semibold">
-                    Hubungi Kami
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="w-5 h-5 ml-2"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </Button>
-                </a>
+                  <a 
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=support@sparkpay.id&su=Permintaan%20Informasi%20Sparkpay&body=Halo%20Tim%20Sparkpay,%0A%0ASaya%20ingin%20bertanya%20tentang%20layanan%20Sparkpay.%0A%0ATerima%20kasih." 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    <Button className="bg-[#3C8346] text-white hover:bg-green-700 font-semibold">
+                      Hubungi Kami
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-5 h-5 ml-2"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </Button>
+                  </a>
               </div>
               <div className="flex justify-center md:w-1/3">
                 <Image

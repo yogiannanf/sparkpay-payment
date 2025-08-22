@@ -135,19 +135,19 @@ const SolusiPage: React.FC = () => {
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                 Solusi pembayaran all-in-one untuk semua jenis bisnis, dari startup hingga enterprise berskala besar.
               </p>
-            <Button
-              size="lg"
-              asChild
-              className="bg-[#3C8346] text-white text-lg font-bold rounded-lg px-8 py-4 shadow-[0_8px_20px_rgba(60,131,70,0.5)] hover:bg-green-700 transform transition-transform duration-300 hover:scale-105"
-            >
+              <Button
+                size="lg"
+                asChild
+                className="bg-[#3C8346] text-white text-lg font-bold rounded-lg px-8 py-4 shadow-[0_8px_20px_rgba(60,131,70,0.5)] hover:bg-green-700 transform transition-transform duration-300 hover:scale-105"
+              >
               <a 
-                href="https://wa.me/6288212022222" 
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=support@sparkpay.id&su=Permintaan%20Informasi%20Sparkpay&body=Halo%20Tim%20Sparkpay,%0A%0ASaya%20ingin%20bertanya%20tentang%20layanan%20Sparkpay.%0A%0ATerima%20kasih." 
                 target="_blank" 
                 rel="noopener noreferrer"
               >
                 Hubungi Tim Sales
               </a>
-            </Button>
+              </Button>
             </div>
             <div className="flex justify-center lg:justify-end">
               <img 
