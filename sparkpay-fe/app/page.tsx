@@ -15,6 +15,14 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 // Data untuk section "How It Works"
 const howItWorksData = [
@@ -358,24 +366,77 @@ export default function Home() {
           {/* Kolom Kanan: Deretan Kartu Mitra */}
           <div className="w-full lg:w-2/3">
             <div className="flex flex-wrap justify-center gap-6 lg:justify-start">
+            <Dialog>
+              <DialogTrigger asChild>
+                <Card className="transition-all duration-300 shadow-lg bg-white/90 backdrop-blur-sm rounded-xl hover:shadow-2xl hover:scale-105 cursor-pointer">
+                  <CardContent className="flex flex-col items-center justify-center w-48 h-48 gap-4 p-6">
+                    <Image src="/images/kapten.png" alt="Kapten" width={150} height={80} className="object-contain h-20" />
+                    <p className="text-sm font-medium text-slate-600">Kapten Naratel</p>
+                  </CardContent>
+                </Card>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-md">
+                <DialogHeader>
+                  <DialogTitle>Kapten Naratel</DialogTitle>
+                  <DialogDescription>
+                    Kapten Naratel adalah layanan internet lokal berbasis FTTH (Fiber to the Home) yang dikembangkan oleh UMKM asal Malang, PT Naraya Telematika.
+                    Mereka menghadirkan akses internet yang hemat dan andal, dengan pilihan kecepatan simetris—tanpa embel-embel “up to”—mulai dari 5 Mbps hingga 20 Mbps,
+                    lengkap dengan izin resmi dari pemerintah sebagai penyelenggara ISP dan penyedia jaringan telekomunikasi berbasis fiber optik.
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="mt-4">
+                  <a 
+                    href="https://kaptennaratel.com/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-[#3C8346] hover:text-green-700"
+                  >
+                    <span>Kunjungi Website</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clipRule="evenodd" />
+                    </svg>
+                  </a>
+                </div>
+              </DialogContent>
+            </Dialog>
 
-              <Card className="transition-all duration-300 shadow-lg bg-white/90 backdrop-blur-sm rounded-xl hover:shadow-2xl hover:scale-105">
-                <CardContent className="flex flex-col items-center justify-center w-48 h-48 gap-4 p-6">
-                  <Image src="/images/kapten.png" alt="Kapten" width={150} height={80} className="object-contain h-20" />
-                  <p className="text-sm font-medium text-slate-600">Kapten Naratel</p>
-                </CardContent>
-              </Card>
-
-              <Card className="transition-all duration-300 shadow-lg bg-white/90 backdrop-blur-sm rounded-xl hover:shadow-2xl hover:scale-105">
-                <CardContent className="flex flex-col items-center justify-center w-48 h-48 gap-4 p-6">
-                  <Image src="/images/ngomongo.png" alt="Ngomongo" width={150} height={80} className="object-contain h-20" />
-                  <p className="text-sm font-medium text-slate-600">Ngomongo</p>
-                </CardContent>
-              </Card>
-
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Card className="transition-all duration-300 shadow-lg bg-white/90 backdrop-blur-sm rounded-xl hover:shadow-2xl hover:scale-105 cursor-pointer">
+                    <CardContent className="flex flex-col items-center justify-center w-48 h-48 gap-4 p-6">
+                      <Image src="/images/ngomongo.png" alt="Ngomongo" width={150} height={80} className="object-contain h-20" />
+                      <p className="text-sm font-medium text-slate-600">Ngomongo</p>
+                    </CardContent>
+                  </Card>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-md">
+                  <DialogHeader>
+                    <DialogTitle>Ngomongo</DialogTitle>
+                    <DialogDescription>
+                      Ngomongo adalah platform komunikasi modern yang menyatukan pesan teks, panggilan suara, dan video dalam satu aplikasi yang aman dan cepat. Namun, 
+                      fitur Ngomongo tidak hanya terbatas pada chat: platform ini juga memungkinkan pengguna menjelajahi profil bisnis dan produk secara langsung dari aplikasinya, 
+                      jadi kamu bisa pesan atau mencari produk tanpa keluar dari ruang percakapan. Dirancang dengan visi untuk menggabungkan komunikasi dan e-commerce, Ngomongo 
+                      bertujuan menjadi “all-in-one platform where communication meets commerce.” Ide ini lahir pada tahun 2024 dari sebuah pertanyaan sederhana—
+                      “What if chatting apps did more than just chat?”
+                    </DialogDescription>
+                  </DialogHeader>
+                  <div className="mt-4">
+                    <a 
+                      href="https://ngomongoxyz.vercel.app/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-[#3C8346] hover:text-green-700"
+                    >
+                      <span>Kunjungi Website</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clipRule="evenodd" />
+                      </svg>
+                    </a>
+                  </div>
+                </DialogContent>
+              </Dialog>
             </div>
           </div>
-
         </div>
       </section>
 

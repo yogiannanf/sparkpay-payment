@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -232,12 +233,14 @@ const ProdukPage: React.FC = () => {
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                 Memberdayakan Bisnis Anda dengan Teknologi Pembayaran Tercanggih. SparkPay menyediakan serangkaian lengkap fitur yang dirancang untuk menyederhanakan setiap proses transaksi.
               </p>
-              <Button
-                size="lg"
+              <Link href="/produk">
+                <Button
+                  size="lg"
                   className="bg-[#3C8346] text-white text-lg font-bold rounded-lg px-8 py-4 shadow-[0_8px_20px_rgba(60,131,70,0.5)] hover:bg-green-700 transform transition-transform duration-300 hover:scale-105"
-                  >
-                Jelajahi Produk Kami
-              </Button>
+                >
+                  Jelajahi Produk Kami
+                </Button>
+              </Link>
             </div>
             <div className="flex justify-center lg:justify-end">
               <Image 
@@ -324,19 +327,27 @@ const ProdukPage: React.FC = () => {
             Bergabunglah dengan ribuan merchant yang telah mempercayai SparkPay untuk solusi pembayaran mereka.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg" 
-              className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 text-base font-semibold"
-            >
-              Daftar Sekarang
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="border-green-600 text-green-600 hover:bg-green-50 px-8 py-3 text-base font-semibold"
-            >
-              Hubungi Sales
-            </Button>
+            <Link href="/daftar">
+              <Button 
+                size="lg" 
+                className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 text-base font-semibold"
+              >
+                Daftar Sekarang
+              </Button>
+            </Link>
+              <a 
+              href="https://wa.me/6288212022222" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              >
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="border-green-600 text-green-600 hover:bg-green-50 px-8 py-3 text-base font-semibold"
+              >
+                Hubungi Sales
+              </Button>
+            </a>
           </div>
         </div>
       </section>

@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import { Target, Goal, Lightbulb, ShieldCheck, Users, MapPin, Mail, Phone } from "lucide-react";
 
 // Komponen untuk Visi dan Misi
@@ -83,9 +84,12 @@ export default function TentangPage() {
               <div className="flex flex-wrap gap-4">
                 <Button
                   size="lg"
+                  asChild
                   className="bg-[#3C8346] text-white text-lg font-bold rounded-lg px-8 py-4 shadow-[0_8px_20px_rgba(60,131,70,0.5)] hover:bg-green-700 transform transition-transform duration-300 hover:scale-105"
                 >
-                  Bergabung dengan Kami
+                  <Link href="/daftar">
+                    Bergabung dengan Kami
+                  </Link>
                 </Button>
               </div>
             </div>

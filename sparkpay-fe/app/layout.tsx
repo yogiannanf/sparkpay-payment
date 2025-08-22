@@ -63,17 +63,44 @@ export default function RootLayout({
               <p className="text-sm mb-6">
                 Solusi pembayaran terintegrasi untuk bisnis Indonesia. Aman, cepat, dan mudah digunakan.
               </p>
-              <div className="flex space-x-4">
-                <a href="#" className="bg-white p-2 rounded-full text-[#0D1B2A] hover:bg-green-500 hover:text-white transition-colors">
+             <div className="flex space-x-4">
+                {/* Facebook */}
+                <a 
+                  href="https://www.facebook.com/NarayaTelematika" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="bg-white p-2 rounded-full text-[#0D1B2A] hover:bg-green-500 hover:text-white transition-colors"
+                >
                   <FaFacebookF size={18} />
                 </a>
-                <a href="#" className="bg-white p-2 rounded-full text-[#0D1B2A] hover:bg-green-500 hover:text-white transition-colors">
+
+                {/* Instagram */}
+                <a 
+                  href="https://www.instagram.com/narayatelematika/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="bg-white p-2 rounded-full text-[#0D1B2A] hover:bg-green-500 hover:text-white transition-colors"
+                >
                   <FaInstagram size={18} />
                 </a>
-                <a href="#" className="bg-white p-2 rounded-full text-[#0D1B2A] hover:bg-green-500 hover:text-white transition-colors">
+
+                {/* TikTok */}
+                <a 
+                  href="https://www.tiktok.com/@kaptennaratel" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="bg-white p-2 rounded-full text-[#0D1B2A] hover:bg-green-500 hover:text-white transition-colors"
+                >
                   <FaTiktok size={18} />
                 </a>
-                <a href="#" className="bg-white p-2 rounded-full text-[#0D1B2A] hover:bg-green-500 hover:text-white transition-colors">
+
+                {/* WhatsApp */}
+                <a 
+                  href="https://wa.me/6288212022222" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="bg-white p-2 rounded-full text-[#0D1B2A] hover:bg-green-500 hover:text-white transition-colors"
+                >
                   <FaWhatsapp size={18} />
                 </a>
               </div>

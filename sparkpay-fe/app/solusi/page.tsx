@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button"; 
+import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 // --- TypeScript Interfaces ---
@@ -135,10 +136,17 @@ const SolusiPage: React.FC = () => {
                 Solusi pembayaran all-in-one untuk semua jenis bisnis, dari startup hingga enterprise berskala besar.
               </p>
             <Button
-            size="lg"
+              size="lg"
+              asChild
               className="bg-[#3C8346] text-white text-lg font-bold rounded-lg px-8 py-4 shadow-[0_8px_20px_rgba(60,131,70,0.5)] hover:bg-green-700 transform transition-transform duration-300 hover:scale-105"
+            >
+              <a 
+                href="https://wa.me/6288212022222" 
+                target="_blank" 
+                rel="noopener noreferrer"
               >
-                  Hubungi Tim Sales
+                Hubungi Tim Sales
+              </a>
             </Button>
             </div>
             <div className="flex justify-center lg:justify-end">
