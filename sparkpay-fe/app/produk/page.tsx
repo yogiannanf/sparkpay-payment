@@ -157,7 +157,7 @@ const dashboardFeatures: DashboardFeature[] = [
   }
 ];
 
-// --- Komponen Kartu Produk (MODIFIKASI) ---
+// --- Komponen Kartu Produk ---
 const ProductCard: React.FC<ProductFeature & { index: number }> = ({ 
   title, 
   description, 
@@ -220,6 +220,13 @@ const DashboardFeatureCard: React.FC<DashboardFeature> = ({ title, description, 
 
 // --- Halaman Utama ---
 const ProdukPage: React.FC = () => {
+  const handleScroll = () => {
+    const element = document.getElementById('Produk Utama SparkPay');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="bg-white font-sans">
       {/* Hero Section */}
@@ -233,14 +240,13 @@ const ProdukPage: React.FC = () => {
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                 Memberdayakan Bisnis Anda dengan Teknologi Pembayaran Tercanggih. SparkPay menyediakan serangkaian lengkap fitur yang dirancang untuk menyederhanakan setiap proses transaksi.
               </p>
-              <Link href="/produk">
-                <Button
-                  size="lg"
-                  className="bg-[#3C8346] text-white text-lg font-bold rounded-lg px-8 py-4 shadow-[0_8px_20px_rgba(60,131,70,0.5)] hover:bg-green-700 transform transition-transform duration-300 hover:scale-105"
-                >
-                  Jelajahi Produk Kami
-                </Button>
-              </Link>
+            <Button
+              size="lg"
+              className="bg-[#3C8346] text-white text-lg font-bold rounded-lg px-8 py-4 shadow-[0_8px_20px_rgba(60,131,70,0.5)] hover:bg-green-700 transform transition-transform duration-300 hover:scale-105"
+              onClick={handleScroll}
+            >
+              Mulai Lihat Produk
+            </Button>
             </div>
             <div className="flex justify-center lg:justify-end">
               <Image 
@@ -259,7 +265,14 @@ const ProdukPage: React.FC = () => {
       <section className="py-20 lg:py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">
+            {/* ==============================================================
+              ↓↓↓ PERBAIKAN DI SINI: Tambahkan id pada elemen h2 di bawah ↓↓↓
+              ==============================================================
+            */}
+            <h2 
+              id="Produk Utama SparkPay" 
+              className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4"
+            >
               Produk Utama SparkPay
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed">
@@ -292,65 +305,8 @@ const ProdukPage: React.FC = () => {
           </div>
         </div>
       </section>
+      
 
-      {/* Statistik Section */}
-      <section className="py-20 lg:py-24 bg-green-600">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-4xl font-bold text-white mb-2">30+</div>
-              <div className="text-green-100">Metode Pembayaran</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-white mb-2">99.9%</div>
-              <div className="text-green-100">Uptime</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-white mb-2">10k+</div>
-              <div className="text-green-100">Merchant Aktif</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-white mb-2">24/7</div>
-              <div className="text-green-100">Customer Support</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 lg:py-24">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4">
-            Siap Meningkatkan Bisnis Anda?
-          </h2>
-          <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-            Bergabunglah dengan ribuan merchant yang telah mempercayai SparkPay untuk solusi pembayaran mereka.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/daftar">
-              <Button 
-                size="lg" 
-                className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 text-base font-semibold"
-              >
-                Daftar Sekarang
-              </Button>
-            </Link>
-              <a 
-              href="https://wa.me/6288212022222" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              >
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="border-green-600 text-green-600 hover:bg-green-50 px-8 py-3 text-base font-semibold"
-              >
-                Hubungi Sales
-              </Button>
-            </a>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };

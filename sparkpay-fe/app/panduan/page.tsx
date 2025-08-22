@@ -3,6 +3,7 @@
 import React from 'react';
 // Pastikan path import ini sesuai dengan struktur proyek Anda
 import { Button } from "@/components/ui/button"; 
+import Image from 'next/image'; // <-- Ganti img dengan Image dari Next.js untuk optimasi
 
 // --- Komponen Halaman Panduan ---
 const PanduanPage: React.FC = () => {
@@ -20,20 +21,33 @@ const PanduanPage: React.FC = () => {
                 Semua yang Anda Butuhkan untuk Mengintegrasikan SparkPay
               </p>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Dari dokumentasi API hingga video tutorial, temukan semua resource yang Anda butuhkan untuk sukses dengan platform pembayaran SparkPay.
+                Mulai dari langkah awal hingga penggunaan fitur-fitur utama, kami menyediakan panduan lengkap yang memudahkan Anda memahami dan menggunakan SparkPay dengan lebih cepat dan praktis.
               </p>
-            <Button
-            size="lg"
-              className="bg-[#3C8346] text-white text-lg font-bold rounded-lg px-8 py-4 shadow-[0_8px_20px_rgba(60,131,70,0.5)] hover:bg-green-700 transform transition-transform duration-300 hover:scale-105"
+              
+              {/* --- Link Midtrans --- */}
+              <a 
+                href="https://docs.midtrans.com/docs/midtrans-account" 
+                target="_blank" 
+                rel="noopener noreferrer"
               >
+                <Button
+                  size="lg"
+                  className="bg-[#3C8346] text-white text-lg font-bold rounded-lg px-8 py-4 shadow-[0_8px_20px_rgba(60,131,70,0.5)] hover:bg-green-700 transform transition-transform duration-300 hover:scale-105"
+                >
                   Jelajahi Dokumentasi
-            </Button>
+                </Button>
+              </a>
+              {/* ------------------------- */}
+
             </div>
             <div className="flex justify-center lg:justify-end">
-              <img 
+              {/* Mengganti <img> dengan <Image> untuk performa lebih baik */}
+              <Image 
                 src="/images/foto3.jpg" 
-                alt="Panduan dan Dokumentasi SparkPay" 
-                className="rounded-xl shadow-2xl w-full max-w-lg object-cover"
+                alt="Panduan dan Dokumentasi SparkPay"
+                width={500}
+                height={400} 
+                className="rounded-xl shadow-2xl w-full max-w-lg h-auto object-cover"
               />
             </div>
           </div>
