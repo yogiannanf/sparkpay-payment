@@ -1,20 +1,20 @@
 export default function ProdukPage() {
   return (
-    <main className="bg-white text-gray-800">
+    <main className="text-gray-800">
       {/* Hero Section */}
-      <section className="max-w-5xl mx-auto px-6 py-16 text-center">
-        <h2 className="text-3xl font-bold mb-2">Produk & Fitur Unggulan</h2>
-        <h1 className="text-green-600 text-4xl font-extrabold mb-4">SparkPay</h1>
-        <p className="text-lg text-gray-600">
-          Memberdayakan Bisnis Anda dengan Teknologi Pembayaran Terlengkap
-        </p>
-        <p className="mt-4 text-gray-600">
-          SparkPay menawarkan beragam layanan yang dibuat khusus untuk memudahkan setiap
-          proses transaksi digital Anda. Apa pun jenis bisnis Anda, kami punya solusi
-          yang pas agar usaha Anda bisa berkembang lebih cepat, lebih efisien, dan
-          konsisten.
-        </p>
-      </section>
+    <section className="w-full px-6 py-16 text-center bg-[#4CAF4F]/10">
+    <h2 className="text-3xl font-bold mb-2">Produk & Fitur Unggulan</h2>
+    <h1 className="text-green-600 text-4xl font-extrabold mb-4">SparkPay</h1>
+    <p className="text-lg text-gray-600">
+        Memberdayakan Bisnis Anda dengan Teknologi Pembayaran Terlengkap
+    </p>
+    <p className="mt-4 text-gray-600 max-w-4xl mx-auto">
+        SparkPay menawarkan beragam layanan yang dibuat khusus untuk memudahkan setiap
+        proses transaksi digital Anda. Apa pun jenis bisnis Anda, kami punya solusi
+        yang pas agar usaha Anda bisa berkembang lebih cepat, lebih efisien, dan
+        konsisten.
+    </p>
+    </section>
 
       {/* Fitur Section */}
       <section className="max-w-5xl mx-auto px-6 space-y-12">
@@ -32,7 +32,7 @@ export default function ProdukPage() {
               <li><b>Keamanan Terjamin</b>: Perlindungan dengan Fraud Detection System.</li>
             </ul>
           </div>
-          <img src="/images/payment-gateway.png" alt="Payment Gateway" className="w-full" />
+          <img src="/images/payment.png" alt="Payment Gateway" className="w-full" />
         </div>
 
         {/* Disbursement */}
@@ -64,7 +64,7 @@ export default function ProdukPage() {
               <li><b>Lacak Transaksi</b>: Pantau status pembayaran real-time.</li>
             </ul>
           </div>
-          <img src="/images/payment-link.png" alt="Payment Link" className="w-full" />
+          <img src="/images/paymentlink.png" alt="Payment Link" className="w-full" />
         </div>
 
         {/* Dashboard */}
