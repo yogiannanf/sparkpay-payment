@@ -28,16 +28,6 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 
-  useEffect(() => {
-    if (!api) return;
-
-    const interval = setInterval(() => {
-      api.slideNext(); // maju satu item
-    }, 3000); // 3000ms = 3 detik
-
-    return () => clearInterval(interval);
-  }, [api]);
-
 // Data untuk section "How It Works"
 const howItWorksData = [
   {
