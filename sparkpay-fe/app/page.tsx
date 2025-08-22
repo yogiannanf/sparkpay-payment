@@ -365,7 +365,7 @@ export default function Home() {
 
           {/* Kolom Kanan: Deretan Kartu Mitra */}
           <div className="w-full lg:w-2/3">
-            <div className="flex flex-wrap justify-center gap-6 lg:justify-start">
+            <div className="flex flex-wrap justify-center gap-6 lg:justify-end">
             <Dialog>
               <DialogTrigger asChild>
                 <Card className="transition-all duration-300 shadow-lg bg-white/90 backdrop-blur-sm rounded-xl hover:shadow-2xl hover:scale-105 cursor-pointer">
