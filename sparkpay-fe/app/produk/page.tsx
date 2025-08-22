@@ -169,23 +169,6 @@ const ProductCard: React.FC<ProductFeature & { index: number }> = ({
   const isReversed = index % 2 !== 0;
 
   return (
-<<<<<<< HEAD
-    <main className="text-gray-800">
-      {/* Hero Section */}
-    <section className="w-full px-6 py-16 text-center bg-[#4CAF4F]/10">
-    <h2 className="text-3xl font-bold mb-2">Produk & Fitur Unggulan</h2>
-    <h1 className="text-green-600 text-4xl font-extrabold mb-4">SparkPay</h1>
-    <p className="text-lg text-gray-600">
-        Memberdayakan Bisnis Anda dengan Teknologi Pembayaran Terlengkap
-    </p>
-    <p className="mt-4 text-gray-600 max-w-4xl mx-auto">
-        SparkPay menawarkan beragam layanan yang dibuat khusus untuk memudahkan setiap
-        proses transaksi digital Anda. Apa pun jenis bisnis Anda, kami punya solusi
-        yang pas agar usaha Anda bisa berkembang lebih cepat, lebih efisien, dan
-        konsisten.
-    </p>
-    </section>
-=======
     <div id={id} className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div className={isReversed ? 'lg:order-2' : 'lg:order-1'}>
         <div className="flex items-center mb-6">
@@ -207,7 +190,7 @@ const ProductCard: React.FC<ProductFeature & { index: number }> = ({
       <div className={isReversed ? 'lg:order-1' : 'lg:order-2'}>
         <Image 
           src={illustration} 
-          alt={`${title} Illustration`} 
+          alt={${title} Illustration} 
           width={500}
           height={300}
           className="rounded-xl shadow-lg w-full h-auto object-cover"
@@ -268,7 +251,6 @@ const ProdukPage: React.FC = () => {
           </div>
         </div>
       </section>
->>>>>>> cb35c662314fe7ba41e242624d04a47901d105b7
 
       {/* Produk Utama Section */}
       <section className="py-20 lg:py-24">
@@ -281,29 +263,10 @@ const ProdukPage: React.FC = () => {
               Solusi pembayaran lengkap untuk semua kebutuhan bisnis Anda.
             </p>
           </div>
-<<<<<<< HEAD
-          <img src="/images/payment.png" alt="Payment Gateway" className="w-full" />
-        </div>
-
-        {/* Disbursement */}
-        <div className="grid md:grid-cols-2 gap-8 items-center">
-          <img src="/images/disbursement.png" alt="Disbursement" className="w-full" />
-          <div>
-            <h3 className="text-xl font-semibold mb-2 text-blue-600">Disbursement</h3>
-            <p className="mb-3 text-gray-600">
-              Kirim dana ke ribuan rekening sekaligus dengan cepat dan aman.
-            </p>
-            <ul className="space-y-2 text-gray-700 list-disc list-inside">
-              <li><b>Efisien</b>: Transfer ke banyak bank hanya dengan sekali klik.</li>
-              <li><b>Terjadwal</b>: Atur penyaluran sesuai kebutuhan.</li>
-              <li><b>Laporan Lengkap</b>: Akses laporan detail setiap transaksi.</li>
-            </ul>
-=======
           <div className="space-y-20">
             {productsData.map((product, index) => (
               <ProductCard key={product.id} {...product} index={index} />
             ))}
->>>>>>> cb35c662314fe7ba41e242624d04a47901d105b7
           </div>
         </div>
       </section>
@@ -319,15 +282,11 @@ const ProdukPage: React.FC = () => {
               Kelola bisnis Anda dengan mudah melalui dashboard yang intuitif dan powerful.
             </p>
           </div>
-<<<<<<< HEAD
-          <img src="/images/paymentlink.png" alt="Payment Link" className="w-full" />
-=======
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {dashboardFeatures.map((feature) => (
               <DashboardFeatureCard key={feature.title} {...feature} />
             ))}
           </div>
->>>>>>> cb35c662314fe7ba41e242624d04a47901d105b7
         </div>
       </section>
 
