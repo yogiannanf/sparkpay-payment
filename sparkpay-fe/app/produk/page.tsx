@@ -190,7 +190,11 @@ const ProductCard: React.FC<ProductFeature & { index: number }> = ({
       <div className={isReversed ? 'lg:order-1' : 'lg:order-2'}>
         <Image 
           src={illustration} 
+<<<<<<< HEAD
           alt={`${title} Illustration`} 
+=======
+          alt={`{title} Illustration`} 
+>>>>>>> 85cfcc435548c07ccef3c8f15f92ffb231f4f17e
           width={500}
           height={300}
           className="rounded-xl shadow-lg w-full h-auto object-cover"
