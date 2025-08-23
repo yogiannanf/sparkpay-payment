@@ -53,9 +53,8 @@ const solutions: SolutionData[] = [
     description: 'Tingkatkan konversi dengan menyediakan berbagai pilihan metode pembayaran.',
     features: [
       'Terima pembayaran dari 30+ metode pembayaran',
-      'Checkout yang dapat disesuaikan',
       'Proses rekonsiliasi lebih cepat',
-      'Tingkat keberhasilan transaksi hingga 95%'
+      'Tingkat keberhasilan transaksi hingga 100%'
     ],
     icon: <ShoppingCartIcon />
   },
