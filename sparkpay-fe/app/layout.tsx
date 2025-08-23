@@ -137,7 +137,7 @@ export default function RootLayout({
                 {/* <a href="https://www.facebook.com/NarayaTelematika" target="_blank" rel="noopener noreferrer" className="bg-white p-2 rounded-full text-[#0D1B2A] hover:bg-green-500 hover:text-white transition-colors">
                   <FaFacebookF size={18} />
                 </a> */}
-                <a href="https://www.instagram.com/narayatelematika/" target="_blank" rel="noopener noreferrer" className="bg-white p-2 rounded-full text-[#0D1B2A] hover:bg-green-500 hover:text-white transition-colors">
+                <a href="https://www.instagram.com/sparkpay_id?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" className="bg-white p-2 rounded-full text-[#0D1B2A] hover:bg-green-500 hover:text-white transition-colors">
                   <FaInstagram size={18} />
                 </a>
                 <a
