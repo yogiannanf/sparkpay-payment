@@ -270,13 +270,14 @@ export default function Home() {
               Terima pembayaran dari berbagai metode hanya dengan satu
               integrasi. Aman, cepat, dan mudah digunakan.
             </p>
-            <Button
-              size="lg"
-              className="bg-[#3C8346] text-white text-lg font-bold rounded-lg px-8 py-4 shadow-[0_8px_20px_rgba(60,131,70,0.5)] hover:bg-green-700 transform transition-transform duration-300 hover:scale-105"
-              onClick={handleScroll}
-            >
-              Mulai Menjelajah
-            </Button>
+            <Link href="/daftar">
+              <Button
+                size="lg"
+                className="bg-[#3C8346] text-white text-lg font-bold rounded-lg px-8 py-4 shadow-[0_8px_20px_rgba(60,131,70,0.5)] hover:bg-green-700 transform transition-transform duration-300 hover:scale-105"
+              >
+                Daftar Sekarang
+              </Button>
+            </Link>
           </div>
 
           {/* Kolom Gambar */}

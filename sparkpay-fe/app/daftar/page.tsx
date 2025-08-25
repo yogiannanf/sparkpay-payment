@@ -2,10 +2,25 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 export default function SignUpPage() {
+  const router = useRouter();
+  const [showModal, setShowModal] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setShowModal(true); // ✅ hanya munculkan modal, jangan redirect dulu
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+    router.push("/singIn"); // ✅ baru redirect setelah klik OK
+  };
+
   return (
-    <div className="min-h-screen flex">
+    <div className="relative min-h-screen flex">
       {/* Left Side - Image + Text */}
       <div className="hidden lg:flex w-1/2 relative">
         <Image
@@ -40,7 +55,7 @@ export default function SignUpPage() {
           </div>
 
           {/* Form */}
-          <form className="space-y-4 text-left">
+          <form className="space-y-4 text-left" onSubmit={handleSubmit}>
             <div>
               <label className="block text-sm font-medium mb-1">Nama Lengkap</label>
               <input
@@ -130,6 +145,24 @@ export default function SignUpPage() {
           </p>
         </div>
       </div>
+
+      {/* Modal Pop Up */}
+      {showModal && (
+        <div className="absolute inset-0 flex items-center justify-center bg-black/20 z-50">
+          <div className="bg-white rounded-lg shadow-xl p-8 max-w-sm w-full text-center">
+            <h2 className="text-2xl font-bold mb-4">Terima Kasih!</h2>
+            <p className="text-gray-600 mb-6">
+              Terima kasih sudah mendaftar. Anda akan diarahkan ke halaman login.
+            </p>
+            <button
+              onClick={handleCloseModal}
+              className="bg-[#4CAF4F] text-white px-4 py-2 rounded-md hover:bg-[#43A047] transition"
+            >
+              OK
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
