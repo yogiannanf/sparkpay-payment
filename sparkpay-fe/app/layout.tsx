@@ -5,8 +5,7 @@ import { Geist } from "next/font/google";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import "./globals.css";
-import { FaInstagram } from "react-icons/fa";
-import { FaEnvelope } from "react-icons/fa";
+import { FaInstagram, FaEnvelope } from "react-icons/fa";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,13 +18,16 @@ export default function RootLayout({
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  // Close menu setiap kali pindah halaman
+  // Tutup menu setiap kali pindah halaman
   useEffect(() => {
     setIsMenuOpen(false);
   }, [pathname]);
 
-  // Halaman yang tidak pakai navbar + footer
-  const isDashboard = pathname.startsWith("/dashboard");
+  // Halaman yang TIDAK pakai navbar & footer
+  const hideLayout =
+    pathname.startsWith("/dashboard") ||
+    pathname.startsWith("/signIn") ||
+    pathname.startsWith("/signUp");
 
   const navLinks = [
     { href: "/produk", label: "Produk" },
@@ -39,7 +41,7 @@ export default function RootLayout({
         className={`${geistSans.variable} antialiased bg-white text-gray-800 flex flex-col min-h-screen`}
       >
         {/* Navbar */}
-        {!isDashboard && (
+        {!hideLayout && (
           <header className="w-full shadow-sm bg-white sticky top-0 z-50">
             <nav className="max-w-7xl mx-auto px-6 flex items-center justify-between py-4">
               {/* Logo */}
@@ -131,7 +133,7 @@ export default function RootLayout({
         <main className="flex-grow">{children}</main>
 
         {/* Footer */}
-        {!isDashboard && (
+        {!hideLayout && (
           <footer className="bg-[#0D1B2A] text-gray-200 pt-12 pb-6">
             <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12">
               {/* Logo & Deskripsi */}
@@ -155,7 +157,7 @@ export default function RootLayout({
                     <FaInstagram size={18} />
                   </a>
                   <a
-                    href="https://mail.google.com/mail/?view=cm&fs=1&to=support@sparkpay.id&su=Permintaan%20Informasi%20Sparkpay&body=Halo%20Tim%20Sparkpay,%0A%0ASaya%20ingin%20bertanya%20tentang%20layanan%20Sparkpay.%0A%0ATerima%20kasih."
+                    href="mailto:support@sparkpay.id"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-white p-2 rounded-full text-[#0D1B2A] hover:bg-green-500 hover:text-white transition-colors"
@@ -292,10 +294,7 @@ export default function RootLayout({
                       <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                     </svg>
                   </span>
-                  <a
-                    href="mailto:support@sparkpay.id"
-                    className="text-sm text-white"
-                  >
+                  <a href="mailto:support@sparkpay.id" className="text-sm text-white">
                     support@sparkpay.id
                   </a>
                 </div>

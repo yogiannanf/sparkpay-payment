@@ -16,7 +16,7 @@ export default function SignUpPage() {
 
   const handleCloseModal = () => {
     setShowModal(false);
-    router.push("/singIn"); // ✅ baru redirect setelah klik OK
+    router.push("/signIn"); // ✅ baru redirect setelah klik OK
   };
 
   return (
@@ -139,7 +139,7 @@ export default function SignUpPage() {
 
           <p className="mt-6 text-sm text-gray-600 text-center">
             Sudah punya akun SparkPay?{" "}
-            <Link href="/singIn" className="text-blue-600 hover:underline">
+            <Link href="/signIn" className="text-blue-600 hover:underline">
               Masuk
             </Link>
           </p>
@@ -148,15 +148,38 @@ export default function SignUpPage() {
 
       {/* Modal Pop Up */}
       {showModal && (
-        <div className="absolute inset-0 flex items-center justify-center bg-black/20 z-50">
-          <div className="bg-white rounded-lg shadow-xl p-8 max-w-sm w-full text-center">
-            <h2 className="text-2xl font-bold mb-4">Terima Kasih!</h2>
-            <p className="text-gray-600 mb-6">
-              Terima kasih sudah mendaftar. Anda akan diarahkan ke halaman login.
+        <div className="fixed inset-0 flex items-center justify-center bg-black/30 z-50">
+          {/* Backdrop */}
+          <div
+            className="absolute inset-0 bg-black/40 backdrop-blur-sm"
+            onClick={handleCloseModal} // klik di luar modal juga bisa menutup
+          ></div>
+
+          {/* Modal */}
+          <div className="relative bg-white rounded-2xl shadow-2xl p-8 max-w-sm w-full mx-4 text-center animate-fadeIn scale-up">
+            <div className="flex justify-center mb-4">
+              <div className="bg-green-100 rounded-full p-4">
+                {/* Icon centang */}
+                <svg
+                  className="w-8 h-8 text-green-600"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+            </div>
+
+            <h2 className="text-2xl font-bold mb-2 text-gray-800">Pendaftaran Berhasil!</h2>
+            <p className="text-gray-600 mb-6 text-sm">
+              Terima kasih sudah mendaftar. Klik OK untuk menuju halaman login.
             </p>
+
             <button
               onClick={handleCloseModal}
-              className="bg-[#4CAF4F] text-white px-4 py-2 rounded-md hover:bg-[#43A047] transition"
+              className="bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-2 rounded-lg transition-all shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-green-300"
             >
               OK
             </button>

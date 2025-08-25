@@ -34,9 +34,9 @@ export default function LoginPage() {
     }
   };
 
-  const handleGoToDaftar = () => {
+  const handleGoToSignUp = () => {
     setShowModal(false);
-    router.push("/daftar");
+    router.push("/signUp");
   };
 
   return (
@@ -44,7 +44,7 @@ export default function LoginPage() {
       {/* Left Side - Image + Text */}
       <div className="hidden lg:flex w-1/2 relative">
         <Image
-          src="/images/bg-hris.jpg"
+          src="/images/sparkpay.png"
           alt="Background"
           fill
           className="absolute object-cover"
@@ -118,7 +118,7 @@ export default function LoginPage() {
           {/* Sign Up link */}
           <p className="mt-6 text-sm text-gray-600 text-center">
             Belum punya akun SparkPay?{" "}
-            <Link href="/daftar" className="text-blue-600 hover:underline">
+            <Link href="/signUp" className="text-blue-600 hover:underline">
               Daftar
             </Link>
           </p>
@@ -126,47 +126,90 @@ export default function LoginPage() {
       </div>
 
       {/* Modal Pop Up */}
-      {showModal && modalType === "success" && (
-        <div className="absolute inset-0 flex items-center justify-center bg-black/20 z-50">
-          <div className="bg-white rounded-lg shadow-xl p-8 max-w-sm w-full text-center">
-            <h2 className="text-2xl font-bold mb-4">Selamat!</h2>
-            <p className="text-gray-600 mb-6">
-              Anda berhasil login. Selamat datang di SparkPay Gateway 🎉
-            </p>
-            <button
-              onClick={handleCloseModal}
-              className="bg-[#4CAF4F] text-white px-4 py-2 rounded-md hover:bg-[#43A047] transition"
-            >
-              OK
-            </button>
-          </div>
-        </div>
-      )}
+{showModal && modalType === "success" && (
+  <div className="fixed inset-0 flex items-center justify-center bg-black/30 z-50">
+    {/* Backdrop */}
+    <div
+      className="absolute inset-0 bg-black/40 backdrop-blur-sm"
+      onClick={handleCloseModal}
+    ></div>
 
-      {showModal && modalType === "error" && (
-        <div className="absolute inset-0 flex items-center justify-center bg-black/20 z-50">
-          <div className="bg-white rounded-lg shadow-xl p-8 max-w-sm w-full text-center">
-            <h2 className="text-2xl font-bold mb-4 text-red-600">Login Gagal!</h2>
-            <p className="text-gray-600 mb-6">
-              Email atau kata sandi yang Anda masukkan salah.
-            </p>
-            <div className="flex gap-4 justify-center">
-              <button
-                onClick={() => setShowModal(false)}
-                className="bg-gray-400 text-white px-4 py-2 rounded-md hover:bg-gray-500 transition"
-              >
-                Sudah Punya Akun
-              </button>
-              <button
-                onClick={handleGoToDaftar}
-                className="bg-[#4CAF4F] text-white px-4 py-2 rounded-md hover:bg-[#43A047] transition"
-              >
-                Belum Punya Akun
-              </button>
-            </div>
-          </div>
+    {/* Modal */}
+    <div className="relative bg-white rounded-2xl shadow-2xl p-8 max-w-sm w-full mx-4 text-center animate-fadeIn scale-up">
+      <div className="flex justify-center mb-4">
+        <div className="bg-green-100 rounded-full p-4">
+          <svg
+            className="w-8 h-8 text-green-600"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={2}
+            viewBox="0 0 24 24"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
         </div>
-      )}
+      </div>
+
+      <h2 className="text-2xl font-bold mb-2 text-gray-800">Selamat!</h2>
+      <p className="text-gray-600 mb-6 text-sm">
+        Anda berhasil login. Selamat datang di SparkPay Gateway 🎉
+      </p>
+
+      <button
+        onClick={handleCloseModal}
+        className="bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-2 rounded-lg transition-all shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-green-300"
+      >
+        OK
+      </button>
+    </div>
+  </div>
+)}
+
+{showModal && modalType === "error" && (
+  <div className="fixed inset-0 flex items-center justify-center bg-black/30 z-50">
+    <div
+      className="absolute inset-0 bg-black/40 backdrop-blur-sm"
+      onClick={() => setShowModal(false)}
+    ></div>
+
+    <div className="relative bg-white rounded-2xl shadow-2xl p-8 max-w-sm w-full mx-4 text-center animate-fadeIn scale-up">
+      <div className="flex justify-center mb-4">
+        <div className="bg-red-100 rounded-full p-4">
+          <svg
+            className="w-8 h-8 text-red-600"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={2}
+            viewBox="0 0 24 24"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </div>
+      </div>
+
+      <h2 className="text-2xl font-bold mb-2 text-red-600">Login Gagal!</h2>
+      <p className="text-gray-600 mb-6 text-sm">
+        Email atau kata sandi yang Anda masukkan salah.
+      </p>
+
+      <div className="flex gap-4 justify-center">
+        <button
+          onClick={() => setShowModal(false)}
+          className="bg-gray-400 text-white px-4 py-2 rounded-lg hover:bg-gray-500 transition shadow-sm hover:shadow-md"
+        >
+          Coba Lagi
+        </button>
+        <button
+          onClick={handleGoToSignUp}
+          className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition shadow-sm hover:shadow-md"
+        >
+          Daftar Akun
+        </button>
+      </div>
+    </div>
+  </div>
+)}
+
     </div>
   );
 }
